@@ -1,0 +1,29 @@
+<div class="author">
+    <h1 class="author__heading">Hi, I am Karan.</h1>
+    <p class="author__body">Coding Enthusiast and Web Developer</p>
+
+</div>
+<img src="img/depressed-person-sitting-alone-bench_23-2150761466.avif" alt="nhi mili picture" class="hero-image" width="981" height="528">
+
+<section class="articles">
+    <h2 class="articles__heading">Latest Posts</h2>
+    <ul class="article-ul">
+
+        <% data.forEach(post => { %>
+            <li>
+                <a href="/post/<%= post._id %>">
+                    <span><%= post.title %></span>
+                    <span class="article-list__date"><%= post.createdAt.toDateString() %></span>
+                </a>
+            </li>
+        <% }) %>
+
+    </ul>
+    <% if (nextPage !== null) { %>
+        <a href="/?page=<%= nextPage %>" class="pagination">&lt; View Older Posts</a>
+    <% } %>
+    
+   
+    
+
+</section>
